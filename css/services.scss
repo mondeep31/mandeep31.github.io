@@ -1,0 +1,111 @@
+@import './global/variable' ,'./global/global', './global/responsive' , './global/footer' , './global/navigation';
+
+
+@include headerStylingSecondary(70vh);
+
+@mixin serviceTitle {
+    h1.service-title{
+        font-family: $georama;
+        font-size: 50px;
+        font-weight: $bold;
+        color: $blue;
+    }
+}
+main{
+    section.service-section{
+        margin-top: 4rem;
+        .section-heading{
+            @include serviceTitle();
+            .para-services{
+                font-family: $spaceGrotesk;
+            }
+        }
+
+        .card{
+            margin-top: 2rem;
+            border: none;
+            box-shadow: 1px 1px 30px #7a83aa31;
+            .card-title{
+                font-family: $montserrat;
+                font-weight: $semiBold;
+            }
+            .card-subtitle{
+                margin-top: .5rem;
+                span{
+                    color: $white;
+                    font-family: $spaceGrotesk;
+                    background: $green;
+                    border-radius: 10rem;
+                    margin: 0rem .2rem;
+                    padding: 0rem .4rem;
+                    font-size: 15px;
+                }
+                i{
+                    color: $green;
+                }
+            }
+            .card-text{
+                li{
+                    font-family: $montserrat;
+                    font-weight: $semiBold;
+                    list-style-type: circle;
+                    margin: .5rem 0rem;
+                }
+                margin-top: 2rem;
+            }
+
+            p.card-text{
+                font-family: $spaceGrotesk;
+                list-style-type: circle;
+                margin: .5rem 0rem;
+                text-align: justify;
+            }
+
+            .service-price {
+                p{
+                    font-family: $georama;
+                    // text-align: center;
+                    font-size: 20px;
+                    font-weight: $semiBold;
+                    color: $blue;
+                }
+            }
+
+            #book-btn{
+                font-family: $georama;
+                background: $green;
+                color: $white;
+                margin-top: 1rem;
+                border-top-right-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+                i{
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+
+    section#Graphics-Designing , 
+    #digital-marketting ,
+    #special-deals
+     {
+        margin-top: 10rem;
+    }
+}
+
+#back2top{
+    position: fixed;
+    right: 2%;
+    top: 85%;
+    background: $blue;
+    color: $white;
+    font-family: $georama;
+    border-radius:2px ;
+    box-shadow: 1px 3px 20px #35353560;
+    z-index: 1000;
+    &:focus,
+    &:active{
+        box-shadow: none;
+        outline: none;
+    }
+}

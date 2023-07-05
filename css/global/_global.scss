@@ -1,0 +1,208 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background: whitesmoke;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+li{
+    list-style-type: none;
+}
+
+::-webkit-scrollbar{
+    width: 16px;
+    background: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background: $blue;
+    border-radius: 2px;
+}
+
+
+
+
+// loader
+.loader-wrapper{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background: whitesmoke;
+    z-index: 20000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease;
+    .spinner {
+        width: 40px;
+        height: 40px;
+      
+        position: relative;
+        margin: 100px auto;
+    
+    
+        .double-bounce1, .double-bounce2 {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #418dc0de;
+            opacity: 0.6;
+            position: absolute;
+            
+            -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+            animation: sk-bounce 2.0s infinite ease-in-out;
+        }
+    
+        .double-bounce2 {
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+    
+        @-webkit-keyframes sk-bounce {
+            0%, 100% { -webkit-transform: scale(0.0) }
+            50% { -webkit-transform: scale(1.0) }
+        }
+          
+        @keyframes sk-bounce {
+            0%, 100% { 
+              transform: scale(0.0);
+              -webkit-transform: scale(0.0);
+            } 50% { 
+              transform: scale(1.0);
+              -webkit-transform: scale(1.0);
+            }
+        }
+    }
+}
+
+.load--fade--out{
+    opacity: 0;
+    transition: .4s ease;
+    pointer-events: none;
+}
+
+@mixin headingTextStyle() {
+    .subtitle{
+        font-family: $montserrat;
+        display: flex;
+        font-size: 20px;
+        align-items: center;
+        color: $blue;
+        font-weight: $medium;
+        @include __400__{
+            font-size: 14px;
+        }
+        .line{
+            content: '';
+            height: 2px;
+            width: 10rem;
+            background: $blue;
+            margin-left: 1.5rem;
+            @include __400__{
+                width: 5rem;
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .section--title{
+        font-size: 100px;
+        font-family: $montserrat;
+        font-weight: $bold;
+        @include __1200__{
+            font-size: 80px;
+        }
+        @include __600__{
+            font-size: 60px;
+        }
+        @include __400__{
+            font-size: 45px;
+        }
+    }
+}
+
+@mixin headerStylingSecondary($height) {
+    .header_area{
+        background: linear-gradient(#000000a8 , #000000a8), url("../img/Demo_image.jpg");
+        height: $height;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    
+        .header-content{
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50% , -50%);
+            h1.companyName{
+                color: $white;
+                font-family: $spaceGrotesk;
+                font-weight: $bold;
+                font-size: 90px;
+                @include __400__{
+                    font-size: 50px;
+                }
+            }
+            p.below-text{
+                color: $white;
+                font-family: $georama;
+                font-size: 20px;
+                line-height: 2rem;
+                @include __600__{
+                    font-size: 17px;
+                    text-align: justify;
+                }
+            }
+        }
+        .container {
+            .mouse {
+                cursor: pointer;
+                position: absolute;
+                bottom: 5%;
+                left: 50%;
+                width: 25px;
+                height: 40px;
+                border: 2px solid rgb(255, 255, 255);
+                border-radius: 60px;
+                &::before {
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    position: absolute;
+                    top: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: rgb(255, 255, 255);
+                    border-radius: 50%;
+                    opacity: 1;
+                    animation: wheel 2s infinite;
+                    -webkit-animation: wheel 2s infinite;
+                }
+            }
+            
+            @keyframes wheel {
+                to {
+                    opacity: 0;
+                    top: 26px;
+                }
+            }
+            
+            @-webkit-keyframes wheel {
+                to {
+                    opacity: 0;
+                    top: 26px;
+                }
+            }
+        }
+    }
+}

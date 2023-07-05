@@ -1,0 +1,657 @@
+@import './global/variable' , './global/navigation' , './global/global' , './global/responsive' , './global/footer';
+
+
+.section--hidden{
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.section{
+    margin-top: 5rem;
+    transition: 0.5s ease;
+}
+
+@mixin headingTextStyle() {
+    .subtitle{
+        font-family: $montserrat;
+        display: flex;
+        font-size: 20px;
+        align-items: center;
+        color: $blue;
+        font-weight: $medium;
+        @include __400__{
+            font-size: 14px;
+        }
+        .line{
+            content: '';
+            height: 2px;
+            width: 10rem;
+            background: $blue;
+            margin-left: 1.5rem;
+            @include __400__{
+                width: 5rem;
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .section--title{
+        font-size: 100px;
+        font-family: $montserrat;
+        font-weight: $bold;
+        @include __1200__{
+            font-size: 80px;
+        }
+        @include __600__{
+            font-size: 60px;
+        }
+        @include __400__{
+            font-size: 45px;
+        }
+    }
+}
+
+
+
+@mixin cardDesign {
+    .card--content{
+        background: $white;
+        padding: 2rem;
+        border-radius: 5px;
+        transform-style:preserve-3d;
+        transform: perspective(1000px);
+        margin: 0 1rem;
+        box-shadow: 1px 3px 40px #3535351e;
+        @include __1200__{
+                margin: 0;    
+        }
+        .card--image{
+            margin-bottom: 3rem;
+            img{
+                height: 140px;
+                transform: translateZ(20px);
+                @include __1200__{
+                    height: 110px;  
+            }
+            }
+        }
+
+        h1.card--title{
+            font-family: $montserrat;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        p.card--text--content{
+            font-family: $spaceGrotesk;
+        }
+        a.card--button{
+            background: $blue;
+            margin-top: 3rem;
+            color:$white;
+            transform: translateZ(20px);
+            background: $blue;
+            color: $white;
+            font-family: $georama;
+            padding: .5rem 3rem;
+        }
+    }
+}
+
+
+.main_page_body{
+
+    // this is header stylling ----------------------------------------
+    .header_area{
+        background: linear-gradient(#000000a8 , #000000a8), url("../img/Demo_image.jpg");
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    
+        .header-content{
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50% , -50%);
+            h1.companyName{
+                color: $white;
+                font-family: $spaceGrotesk;
+                font-weight: $bold;
+                font-size: 90px;
+                @include __400__{
+                    font-size: 50px;
+                }
+            }
+            p.below-text{
+                color: $white;
+                font-family: $georama;
+                font-size: 20px;
+                line-height: 2rem;
+                @include __600__{
+                    font-size: 17px;
+                    text-align: justify;
+                }
+            }
+        }
+        .container {
+            .mouse {
+                cursor: pointer;
+                position: absolute;
+                bottom: 5%;
+                left: 50%;
+                width: 25px;
+                height: 40px;
+                border: 2px solid rgb(255, 255, 255);
+                border-radius: 60px;
+
+                @include __600__{
+                    display: none;
+                    pointer-events: none;
+                }
+                &::before {
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    position: absolute;
+                    top: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: rgb(255, 255, 255);
+                    border-radius: 50%;
+                    opacity: 1;
+                    animation: wheel 2s infinite;
+                    -webkit-animation: wheel 2s infinite;
+                }
+            }
+            
+            @keyframes wheel {
+                to {
+                    opacity: 0;
+                    top: 26px;
+                }
+            }
+            
+            @-webkit-keyframes wheel {
+                to {
+                    opacity: 0;
+                    top: 26px;
+                }
+            }
+        }
+    }
+
+    .whats-app-btn{
+        position: fixed;
+        left: 5%;
+        top: 85%;
+        z-index: 1000;
+        a{
+            background: #25D366;
+            color: $white;
+            font-family: $georama;
+            border-radius:2px ;
+            box-shadow: 1px 3px 20px #35353560;
+            color: $white;
+            border-radius: 100%;
+            font-size: 20px;
+        }
+    }
+
+    main{
+
+        // section--1 styling =============================
+        section#section--1{
+            margin-top: 5rem;
+            background: fixed no-repeat;
+            background-attachment: fixed;
+            .section--content--1{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+                .content--left-section--1{
+                    .content--left{
+                        @include headingTextStyle();
+
+                        .homePage--aboutUS{
+                            font-family: $spaceGrotesk;
+                            font-size: 18px;
+                            line-height: 2rem;
+                            @include __600__{
+                                font-size: 17px;
+                                text-align: justify;
+                            }
+                        }
+
+                        @include rotateBtn();
+                        .readmore-btn{
+                            margin-top: 2rem;
+                            background: $blue;
+                            width: 200px;
+                            padding: 1.5rem;
+                        }
+                    }
+                }
+
+                .content--right-section--1{
+                    .secion-1--image-area{
+                        width: 600px;
+                        height: 500px;
+                        background: url('../img/Demo_image.jpg');
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                        @include __1200__{
+                            width: 400px;
+                        }
+                        @include __990__{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        // section--1 end ==================================
+
+        // section--2 styling ================================
+        section#section--2{
+            margin-top: 10rem;
+            .section-heading-info{
+                @include headingTextStyle();
+                .section--2--subinfo{
+                    font-family: $spaceGrotesk;
+                    font-size: 20px;
+                    @include __600__{
+                        font-size: 17px;
+                        text-align: justify;
+                    }
+                }
+            }
+            .service-cards{
+                margin-top: 3rem;
+                @include cardDesign();
+            }
+        }
+        // section--2 styling ================================
+
+        .scrolle--text--area{
+            margin-top: 5rem;
+            height: 100vh;
+            background-color: #B2DFDB;
+            .scroll--content{
+                font-family: $montserrat;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                .scroll-text{
+                    font-size: 100px;
+                    font-weight: $semiBold;
+                    @include __600__{
+                        font-size: 12vw;
+                    }
+                }
+            }
+        }
+
+
+        // section--3 styling ===============================
+
+        section#section--3{
+            background: $darkGray;
+            padding: 4rem 0;
+            margin-top: 0%;
+            overflow-x: hidden ;
+            .section--3--content{
+                @include headingTextStyle();
+                .subtitle ,
+                .section--title{
+                    color: $white;
+                }
+                .line{
+                    width: 15rem;
+                    background: $white !important;
+                }
+                p.team--info{
+                    color: $white;
+                    font-size: 20px;
+                    font-family: $spaceGrotesk;
+                    @include __600__{
+                        font-size: 16px;
+                    }
+                }
+            }
+            @include rotateBtn();
+            .readmore-btn{
+                margin-top: 2rem;
+                background: $white;
+                color: $darkGray;
+                width: 200px;
+                padding: 1.5rem;
+            }
+            .link-icon{
+                background: $white;
+            }
+        }
+        // section--3 end ===================================
+
+        //section--4 styling =================================
+
+        section#section--4{
+            .section--heading{
+                @include headingTextStyle();
+                p.team--info{
+                    font-size: 20px;
+                    font-family: $spaceGrotesk;
+                }
+            }
+            .project-works{
+                margin-top: 3rem;
+                .image-box{
+                    overflow: hidden;
+                    height: 45vh;
+                    width: 20rem;
+                    border-radius: 5px;
+                    position: relative;
+                    margin-top: 2rem;
+                    @include __600__{
+                        width: 100%;
+                    }
+                    &:hover > img{
+                        transform: scale(1.1);
+                        transition: .6s ease;
+                    }
+                    &:hover > .overlay{
+                        opacity: 1;
+                    }
+                    .overlay{
+                        content: '';
+                        position: absolute;
+                        top: 0%;
+                        left: 0%;
+                        background: rgba(53, 99, 252, 0.637);
+                        height: 100%;
+                        width: 100%;
+                        opacity: 0;
+                        @include __770__{
+                            opacity: 1;
+                        }
+                        transition: .6s ease;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        button{
+                            background: $white;
+                            color: $blue;
+                            font-family: $montserrat;
+                            font-weight: $medium;
+                        }
+                        p{
+                            color: $white;
+                            font-family: $spaceGrotesk;
+                            font-size: 20px;
+                            font-weight: $medium;
+
+                        }
+                    }
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        transition: .5s ease;
+                    }
+                }
+            }
+        }
+
+        // section--4 end ====================================
+
+        // section--5 ========================================
+        section#section--5{
+            background: #4357D9;
+            padding: 2rem 0rem;
+            position: relative;
+            margin-top: 10rem;
+            .section--heading{
+                @include headingTextStyle();
+                .subtitle{
+                    color: $white;
+                    .line{
+                        background: $white;
+                    }
+                }
+                .section--title{
+                    color: $white;
+                }
+                p.team--info{
+                    font-family: $spaceGrotesk;
+                    font-size: 20px;
+                    color: $white;
+                }
+            }
+            .upper--comma, 
+            .lower--comma{
+                opacity: 30%;
+                position: absolute;
+            }
+            .upper--comma{
+                top: 65%;
+                left: 20%;
+                transform: translate(-50% , -50%);
+                svg{
+                    height: 200px;
+                    
+                    @include __770__{
+                        height: 150px;
+                    }
+                }
+                @include __770__{
+                    left: 30%;
+                    top: 75%;
+                }
+
+                @include __600__{
+                    display: none;
+                    pointer-events: none;
+                }
+            }
+            .lower--comma{
+                top: 96%;
+                right: 10%;
+                transform: translate(-50% , -50%);
+                @include __990__{
+                    top: 98%;
+                }
+                svg{
+                    height: 200px;
+                    @include __770__{
+                        height: 150px;
+                    }
+                }
+                @include __770__{
+                    right: 5%;
+                }
+                @include __600__{
+                    display: none;
+                    pointer-events: none;
+                }
+            }
+
+            .swiper-container{
+                margin-top: 4rem;
+                
+                @include __770__{
+                    margin-top: 2rem;
+                }
+                height: 400px;
+
+                .swiper-wrapper{
+                    .swiper-slide{
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        .user--info{
+                            padding: 2rem 1rem;
+                            display: flex;
+                            align-items: center;
+
+                            @include __770__{
+                                flex-wrap: wrap;
+                                align-items: center;
+                                justify-content: center;
+                            }
+
+                            @include __400__{
+                                padding: 1rem 0rem;
+                            }
+
+                            img{
+                                height: 150px;
+                                width: 150px;
+                                border-radius: 100%;
+                                object-fit: cover;
+                                @include __990__{
+                                    height: 100px;
+                                    width: 100px;
+                                }
+                            }
+                            .client-review{
+                                margin-left: 2rem;
+                                @include __600__{
+                                    margin-left: 0;
+                                }
+                                .client--name{
+                                    font-family: $montserrat;
+                                    font-size: 25px;
+                                    font-weight: $bold;
+                                    color: $white;
+                                    @include __990__{
+                                        font-size: 20px;
+                                    }
+
+                                    @include __770__{
+                                        text-align: center;
+                                        margin-top: 1rem;
+                                    }
+                                }
+                                .review--body{
+                                    font-family: $spaceGrotesk;
+                                    font-size: 18px;
+                                    color: $white;
+                                    margin-top: 1rem;
+                                    @include __990__{
+                                        margin-top: 1rem;
+                                        font-size: 14px;
+                                    }
+                                    @include __770__{
+                                        text-align: justify;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .swiper-button-next,
+                .swiper-button-prev{
+                    color: $white;
+                    @include __400__{
+                        display: none;
+                        pointer-events: none;
+                    }
+                    
+                }
+                .swiper-pagination{
+                    span.swiper-pagination-bullet{
+                        background: $white
+                    }
+                }
+            }
+        }
+        // section--5 end ====================================
+
+        // section--6 =======================================
+
+        section#section--6{
+            .section--heading{
+                @include headingTextStyle();
+            }
+
+            .contact--area{
+                margin-top: 3rem;
+
+                .contact--info{
+                    margin-top: 3rem;
+                    @include __600__{
+                        margin-top: 1rem;
+                    }
+                    // background: #00b7ff28;
+                    h1.call--us{
+                        font-family: $spaceGrotesk;
+                        font-size: 20px;
+                        @include __600__{
+                            align-items: center;
+                            font-size: 14px;
+                        }
+                        i{
+                            color: $black;
+                            font-size: 25px;
+                            margin: 1rem;
+                            padding: 1rem;
+                            border: 1px dashed $black;
+                            @include __600__{
+                                font-size: 20px;
+                                margin: .3rem;
+                                padding: .6rem;
+                            }
+                        }
+                    }
+                } 
+
+
+                .logos{
+                    margin-top: 3rem;
+                }
+                img{
+                    height: 80%;
+                    width: 80%;
+                    @include __770__{
+                        height: 80%;
+                        width: 40%;
+                    }
+                    @include __600__{
+                        height: 80%;
+                        width: 40%;
+                    }
+                    @include __400__{
+                        height: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        // section--6 end ====================================
+    }
+}
+
+#back2top{
+    position: fixed;
+    right: 2%;
+    top: 85%;
+    background: $blue;
+    color: $white;
+    font-family: $georama;
+    border-radius:2px ;
+    box-shadow: 1px 3px 20px #35353560;
+    z-index: 1000;
+    &:focus,
+    &:active{
+        box-shadow: none;
+        outline: none;
+    }
+}

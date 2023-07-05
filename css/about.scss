@@ -1,0 +1,65 @@
+@import './global/navigation' , './global/variable' , './global/global' , './global/footer';
+
+
+.section{
+    margin-top:5rem;
+}
+
+@include headerStylingSecondary(70vh);
+
+.main_page_body{
+    main{
+        .aboutPage--aboutUs{
+            font-family: $spaceGrotesk;
+            font-size: 20px;
+            text-align: justify;
+        }
+        #section--1{
+            @include headingTextStyle();
+        }
+        #section--2{
+            margin-top: 10rem;
+            @include headingTextStyle();
+            .card-area{
+                .card{
+                    margin: 0%;
+                    padding: 0%;
+                    border: 0px;
+                    width: 18rem;
+                    margin-top: 3rem;
+
+                    @include __600__{
+                        width: 20rem;
+                    }
+                    @include __400__{
+                        width: 100%;
+                    }
+                    .card-title{
+                        font-family: $georama;
+                        font-weight: $bold;
+                    }
+                    .card-text{
+                        font-family: $spaceGrotesk;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#back2top{
+    position: fixed;
+    right: 2%;
+    top: 85%;
+    background: $blue;
+    color: $white;
+    font-family: $georama;
+    border-radius:2px ;
+    box-shadow: 1px 3px 20px #35353560;
+    z-index: 1000;
+    &:focus,
+    &:active{
+        box-shadow: none;
+        outline: none;
+    }
+}

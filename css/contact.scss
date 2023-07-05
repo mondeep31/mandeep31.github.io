@@ -1,0 +1,168 @@
+@import './global/variable' , './global/navigation' , './global/responsive' , './global/footer' ;
+
+.header_area{
+    background: linear-gradient(#000000a8 , #000000a8), url("../img/Demo_image.jpg");
+    height: 70vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .header-content{
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50% , -50%);
+        h1.companyName{
+            color: $white;
+            font-family: $spaceGrotesk;
+            font-weight: $bold;
+            font-size: 90px;
+            @include __400__{
+                font-size: 50px;
+            }
+        }
+        p.below-text{
+            color: $white;
+            font-family: $georama;
+            font-size: 20px;
+            line-height: 2rem;
+            @include __600__{
+                font-size: 17px;
+                text-align: justify;
+            }
+        }
+    }
+    .container {
+        .mouse {
+            cursor: pointer;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            width: 25px;
+            height: 40px;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 60px;
+            &::before {
+                content: '';
+                width: 6px;
+                height: 6px;
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgb(255, 255, 255);
+                border-radius: 50%;
+                opacity: 1;
+                animation: wheel 2s infinite;
+                -webkit-animation: wheel 2s infinite;
+            }
+        }
+        
+        @keyframes wheel {
+            to {
+                opacity: 0;
+                top: 26px;
+            }
+        }
+        
+        @-webkit-keyframes wheel {
+            to {
+                opacity: 0;
+                top: 26px;
+            }
+        }
+    }
+}
+
+
+main{
+    #section--1{
+        margin-top: 5rem;
+        form{
+            .form--heading , .form--heading-2{
+                font-family: $montserrat;
+                font-weight: $semiBold;
+                color: $blue;
+                margin-bottom: 2rem;
+            }
+
+            .form--heading-2{
+
+                margin-top: 3rem;
+            }
+            input , select , textarea{
+                box-shadow: none;
+                outline: none;
+                font-family: $georama;
+                &:active,
+                &:focus{
+                    border-color: $blue;
+                }
+            }
+
+            select{
+                option{
+                    border-radius: 5px;
+                }
+            }
+
+            button{
+                background: $blue;
+                border: none;
+                padding: .5rem 2rem;
+                font-family: $georama;
+            }
+        }
+
+        .other-contact-option{
+            padding-left: 2rem;
+            @include __770__{
+                padding-left: .5rem;
+                margin-top: 3rem;
+            }
+
+            h2{
+                font-family: $montserrat;
+                color: $blue;
+                font-weight: $semiBold;
+            }
+            .contact-options{
+                i{
+                    margin-top: 2rem;
+                    border: 1px dashed $blue;
+                    padding: 1rem;
+                    font-size: 20px;
+                    color: $blue;
+                }
+                span.info-item{
+                    font-family: $spaceGrotesk;
+                    margin-left: 1rem;
+                    font-size: 20px;
+                    color: $black;
+                    line-height: 2rem;
+                    @include __400__{
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#back2top{
+    position: fixed;
+    right: 2%;
+    top: 85%;
+    background: $blue;
+    color: $white;
+    font-family: $georama;
+    border-radius:2px ;
+    box-shadow: 1px 3px 20px #35353560;
+    z-index: 1000;
+    &:focus,
+    &:active{
+        box-shadow: none;
+        outline: none;
+    }
+}
