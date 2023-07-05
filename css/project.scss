@@ -1,0 +1,4 @@
+@import './global/variable' , './global/global' ,'./global/responsive' , './global/navigation' ,'./global/footer';
+
+@include headerStylingSecondary(70vh);
+
